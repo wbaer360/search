@@ -1,0 +1,209 @@
+// font-face
+  @font-face
+   font-family: 'Product Sans Regular'
+   src: url("Product Sans Regular.ttf") format("truetype")
+
+
+// variables
+$font-google: 'Product Sans Regular', sans-serif;
+
+// colors
+$base-color: #000
+$acolor: rgba($base-color, 0.87)
+$gcolor: #f1f1f1
+$google-font-color-blue: #4285F4
+$google-font-color-red: #EA4335
+$google-font-color-green: #34A853
+$google-font-color-yellow: #FBBC05
+$search-button: #f8f9fa
+$adv-search: #d93025
+$adv-search-button: #357ae8
+
+
+  
+body
+  margin: 0
+  padding: 0
+  border: 0
+  font-family: arial, sans-serif
+
+
+.nav, .container, .search-form form
+  width: 100vw
+  display: flex
+
+.nav-items-advanced
+  display: flex
+
+a
+  text-decoration: none
+  color: $acolor
+
+  &:hover 
+    text-decoration: underline
+
+
+.nav
+  justify-content: flex-end
+
+  &.nav-advanced
+    justify-content: space-between
+    background-color: $gcolor
+
+  .nav-item
+    padding: 25px 25px 0 0
+    font-size: 0.8125rem
+      
+
+.container, .search-form form
+  justify-content: center
+  flex-direction: column
+  align-items: center
+
+.search-form-buttons
+  display: flex
+  justify-content: space-between
+
+  & input:first-child
+    margin-right: 15px
+
+.container-advanced-search
+  justify-content: left
+  align-items: flex-start
+  padding: 25px 35px
+
+  & table.advanced-search-table
+
+    th
+      text-align: left
+
+      &:first-child
+        font-weight: 100
+
+      &:last-child
+        font-size: 0.9rem
+    
+    tbody
+      
+      &:before
+        content: "@"
+        display: block
+        line-height: 10px
+        text-indent: -99999px
+
+      tr
+        height: 40px
+
+    td
+      font-size: 0.8rem
+
+      &:first-child
+        width: 175px
+
+      &:last-child
+        font-size: 0.75rem
+
+        span
+          font-family: monospace
+
+      &:nth-child(2)
+        // width: 600px
+
+    input[type="text"]
+      width: 600px
+      margin: 0 10px
+      height: 25px
+      padding: 1px 8px
+      border: 1px solid lightgrey
+
+      &:focus
+        outline: none
+        border: 1px solid $adv-search-button
+
+.google-text
+  margin: 100px 0 30px
+  font-family: $font-google
+  font-size: 6.5rem
+  display: flex
+  position: relative
+  padding: -10px
+
+  &.google-text-advanced
+    margin: 10px
+    font-size: 2rem
+
+  .google-big-g, .google-little-g
+    color: $google-font-color-blue
+  
+  .google-big-g
+    text-transform: uppercase
+
+  .google-first-o, .google-e
+    color: $google-font-color-red
+
+  .google-second-o
+    color: $google-font-color-yellow
+  
+  .google-l
+    color: $google-font-color-green
+
+span.google-logo-images
+  font-size: 0.85rem
+  position: absolute
+  text-transform: lowercase
+  color: $google-font-color-blue
+  bottom: 4px
+
+span.google-logo-images
+  right: 28px
+
+form:not([class^="form-advanced-search"])
+  input[type="text"]
+    width: 420px
+    border: 1px solid lightgrey
+    border-radius: 20px
+    padding: 10px 15px
+    margin: 0 0 20px
+
+    &:focus
+      outline: none
+    
+    &:hover
+      background-color: #fff
+      box-shadow: 0 1px 6px rgba(32,33,36,.28)
+      border-color: rgba(223,225,229,0)
+
+  input[type="submit"]
+    background-color: $search-button
+    border: 1px solid $search-button
+    border-radius: 4px
+    padding: 10px 16px
+    font-size: 0.875rem
+
+    &:hover
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1)
+      background-image: -webkit-linear-gradient(top,#f8f9fa,#f8f9fa)
+      background-color: #f8f9fa
+      border: 1px solid #dadce0
+      color: #202124
+      cursor: pointer
+
+form.form-advanced-search
+  tfoot tr td:nth-child(2)
+    text-align: right
+    padding: 20px 10px
+
+  input[type="submit"]
+    background-color: $adv-search-button
+    color: white
+    font-size: 0.8rem
+    padding: 5px 10px
+    border: 1px solid $adv-search-button
+
+.adv-search
+  font-size: 1.25rem
+  font-weight: 100
+  color: $adv-search
+  padding: 25px 35px
+  border-bottom: 1px solid #ebebeb
+
